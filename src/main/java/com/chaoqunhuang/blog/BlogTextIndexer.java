@@ -73,6 +73,10 @@ public class BlogTextIndexer {
         }
     }
 
+    /**
+     * Add file or files in directory to list to be indexed
+     * @param file file or directory path
+     */
     private static void addFiles(File file) {
 
         if (!file.exists()) {
@@ -95,6 +99,12 @@ public class BlogTextIndexer {
         }
     }
 
+    /**
+     * Extract the text from html file using jsoup
+     * @param input file path
+     * @return Extracted text
+     * @throws IOException
+     */
     private static String extractTextFromHtml(File input) throws IOException {
         org.jsoup.nodes.Document doc = Jsoup.parse(input, "UTF-8");
         System.out.println(doc.text());
